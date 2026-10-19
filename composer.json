@@ -1,5 +1,5 @@
 {
-    "name": "wuninsu/nativephp-scanner",
+    "name": "wuninsu/nativephp-mobile-scanner",
     "description": "QR code and barcode scanning for NativePHP Mobile apps.",
     "type": "nativephp-plugin",
     "license": "MIT",

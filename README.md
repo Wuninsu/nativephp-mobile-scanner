@@ -1,5 +1,8 @@
 # NativePHP Scanner
 
+[![Latest Version](https://img.shields.io/packagist/v/wuninsu/nativephp-mobile-scanner.svg)](https://packagist.org/packages/wuninsu/nativephp-mobile-scanner)
+[![License](https://img.shields.io/packagist/l/wuninsu/nativephp-mobile-scanner.svg)](LICENSE)
+
 QR code and barcode scanning for NativePHP Mobile v4 apps.
 
 - **Android:** Google code scanner (ML Kit through Play services). Play services shows the camera screen, so the app needs no camera permission.
@@ -16,7 +19,7 @@ QR code and barcode scanning for NativePHP Mobile v4 apps.
 ## Install
 
 ```sh
-composer require wuninsu/nativephp-scanner
+composer require wuninsu/nativephp-mobile-scanner
 ```
 
 NativePHP compiles only the plugins you register. If your app has no `app/Providers/NativeServiceProvider.php` yet, publish it first:
@@ -28,7 +31,7 @@ php artisan vendor:publish --tag=nativephp-plugins-provider
 Then register the plugin and rebuild the native project:
 
 ```sh
-php artisan native:plugin:register wuninsu/nativephp-scanner
+php artisan native:plugin:register wuninsu/nativephp-mobile-scanner
 php artisan native:install --force
 ```
 
