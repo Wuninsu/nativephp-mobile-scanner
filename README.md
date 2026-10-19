@@ -1,4 +1,4 @@
-# NativePHP Scanner
+# NativePHP Mobile Scanner
 
 [![Latest Version](https://img.shields.io/packagist/v/wuninsu/nativephp-mobile-scanner.svg)](https://packagist.org/packages/wuninsu/nativephp-mobile-scanner)
 [![License](https://img.shields.io/packagist/l/wuninsu/nativephp-mobile-scanner.svg)](LICENSE)
@@ -22,7 +22,7 @@ QR code and barcode scanning for NativePHP Mobile v4 apps.
 composer require wuninsu/nativephp-mobile-scanner
 ```
 
-NativePHP compiles only the plugins you register. If your app has no `app/Providers/NativeServiceProvider.php` yet, publish it first:
+NativePHP compiles only the plugins you register. If your app has no `app/Providers/NativeServiceProvider.php`
 
 ```sh
 php artisan vendor:publish --tag=nativephp-plugins-provider
