@@ -66,6 +66,19 @@ Or listen for the event anywhere (a Laravel listener, or `#[On]` / `#[OnNative]`
 
 `Scanner::isAvailable()` is false on a web server, in tests and under `native:jump`, where there is no camera bridge. Hide the scan button there.
 
+To receive the result as your own event class, pass a subclass of `Scanned` to `->event(MyScanned::class)`.
+
+## Security
+
+A scanned code is untrusted input: anyone can print a QR code, so `$event->value` can hold any text, including `javascript:` URLs, HTML, SQL or lookalike links.
+
+- Check the value against what you expect (a regex, `filter_var($value, FILTER_VALIDATE_URL)` plus an allowed host list, a known ID format) before using it.
+- Never print it with `{!! !!}`, put it in raw SQL or shell commands, or open or redirect to it without checking it first.
+- When more than one scan can be open, compare `$event->id` with the scan's `getId()`.
+- A scan proves nothing on its own. Confirm on your server anything that matters, such as a ticket, payment or check-in.
+
+On Android, Google Play services shows the scanner and reads the code on the phone. ML Kit may send anonymous usage statistics to Google, which some apps must mention in their privacy policy.
+
 ## License
 
 MIT

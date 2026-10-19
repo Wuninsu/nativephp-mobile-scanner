@@ -63,11 +63,11 @@ class PendingScan
         return $this;
     }
 
-    /** Send the result as another event class (constructor: ?string $value, ?string $format, ?string $id, ?string $error). */
+    /** Send the result as a subclass of Scanned instead. */
     public function event(string $eventClass): static
     {
-        if (! class_exists($eventClass)) {
-            throw new InvalidArgumentException("Event class {$eventClass} does not exist.");
+        if (! is_a($eventClass, Scanned::class, true)) {
+            throw new InvalidArgumentException("Event class {$eventClass} must be ".Scanned::class.' or extend it.');
         }
 
         $this->eventClass = $eventClass;
