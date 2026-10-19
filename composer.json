@@ -1,0 +1,31 @@
+{
+    "name": "wuninsu/nativephp-scanner",
+    "description": "QR code and barcode scanning for NativePHP Mobile apps.",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "keywords": ["nativephp", "mobile", "scanner", "qr-code", "barcode"],
+    "authors": [
+        {
+            "name": "Fuseini Abdul-Hafiz"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "nativephp/mobile": "^4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wuninsu\\NativeScanner\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wuninsu\\NativeScanner\\ScannerServiceProvider"
+            ]
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    }
+}

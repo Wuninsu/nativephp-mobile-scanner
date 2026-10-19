@@ -1,0 +1,5 @@
+# Keep LF line endings everywhere, also on Windows checkouts (core.autocrlf)
+* text=auto eol=lf
+
+# Not part of the Composer download
+/.gitattributes export-ignore
